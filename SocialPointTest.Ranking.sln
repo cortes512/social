@@ -1,0 +1,78 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.329
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SocialPointTest.Ranking.WebApi", "SocialPointTest.Ranking.WebApi\SocialPointTest.Ranking.WebApi.csproj", "{FADB7F59-DCD9-44FC-8BC7-ACD1C74CB481}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "WebApi", "WebApi", "{845A7854-D4BF-4035-AD63-330027E86BD2}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Application", "Application", "{774FF5CF-4E15-4D1A-B2F7-7A1F9830CF99}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Domain", "Domain", "{563BE9F4-3A18-4504-84F2-0E47F601779B}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infrastructure", "Infrastructure", "{03967580-BBF1-4D94-8475-D2DDF17E7FAB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SocialPointTest.Ranking.Application", "SocialPointTest.Ranking.Application\SocialPointTest.Ranking.Application.csproj", "{74851DF1-910D-4B40-8D60-E5CA4F79F789}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SocialPointTest.Ranking.Domain", "SocialPointTest.Ranking.Domain\SocialPointTest.Ranking.Domain.csproj", "{B3470EA3-AD47-499B-AA00-78F975187618}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SocialPointTest.Ranking.Domain.TDD", "SocialPointTest.Ranking.Domain.TDD\SocialPointTest.Ranking.Domain.TDD.csproj", "{00C4E89B-1AEB-459F-AEA8-6C2863DC6A59}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SocialPointTest.Ranking.Infrastructure", "SocialPointTest.Ranking.Infrastructure\SocialPointTest.Ranking.Infrastructure.csproj", "{2001A8E2-C256-438B-9C60-10C760D6783E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SocialPointTest.Ranking.Infrastructure.TDD", "SocialPointTest.Ranking.Infrastructure.TDD\SocialPointTest.Ranking.Infrastructure.TDD.csproj", "{3D1324BE-8E6C-4F20-A0BB-14518EF7625C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SocialPointTest.Ranking.Application.TDD", "SocialPointTest.Ranking.Application.TDD\SocialPointTest.Ranking.Application.TDD.csproj", "{FFEFFC15-05BA-4A89-9F08-5D2280E773BC}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{FADB7F59-DCD9-44FC-8BC7-ACD1C74CB481}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FADB7F59-DCD9-44FC-8BC7-ACD1C74CB481}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FADB7F59-DCD9-44FC-8BC7-ACD1C74CB481}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FADB7F59-DCD9-44FC-8BC7-ACD1C74CB481}.Release|Any CPU.Build.0 = Release|Any CPU
+		{74851DF1-910D-4B40-8D60-E5CA4F79F789}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{74851DF1-910D-4B40-8D60-E5CA4F79F789}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{74851DF1-910D-4B40-8D60-E5CA4F79F789}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{74851DF1-910D-4B40-8D60-E5CA4F79F789}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B3470EA3-AD47-499B-AA00-78F975187618}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B3470EA3-AD47-499B-AA00-78F975187618}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B3470EA3-AD47-499B-AA00-78F975187618}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B3470EA3-AD47-499B-AA00-78F975187618}.Release|Any CPU.Build.0 = Release|Any CPU
+		{00C4E89B-1AEB-459F-AEA8-6C2863DC6A59}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{00C4E89B-1AEB-459F-AEA8-6C2863DC6A59}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{00C4E89B-1AEB-459F-AEA8-6C2863DC6A59}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{00C4E89B-1AEB-459F-AEA8-6C2863DC6A59}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2001A8E2-C256-438B-9C60-10C760D6783E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2001A8E2-C256-438B-9C60-10C760D6783E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2001A8E2-C256-438B-9C60-10C760D6783E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2001A8E2-C256-438B-9C60-10C760D6783E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3D1324BE-8E6C-4F20-A0BB-14518EF7625C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3D1324BE-8E6C-4F20-A0BB-14518EF7625C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3D1324BE-8E6C-4F20-A0BB-14518EF7625C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3D1324BE-8E6C-4F20-A0BB-14518EF7625C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FFEFFC15-05BA-4A89-9F08-5D2280E773BC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FFEFFC15-05BA-4A89-9F08-5D2280E773BC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FFEFFC15-05BA-4A89-9F08-5D2280E773BC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FFEFFC15-05BA-4A89-9F08-5D2280E773BC}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{FADB7F59-DCD9-44FC-8BC7-ACD1C74CB481} = {845A7854-D4BF-4035-AD63-330027E86BD2}
+		{74851DF1-910D-4B40-8D60-E5CA4F79F789} = {774FF5CF-4E15-4D1A-B2F7-7A1F9830CF99}
+		{B3470EA3-AD47-499B-AA00-78F975187618} = {563BE9F4-3A18-4504-84F2-0E47F601779B}
+		{00C4E89B-1AEB-459F-AEA8-6C2863DC6A59} = {563BE9F4-3A18-4504-84F2-0E47F601779B}
+		{2001A8E2-C256-438B-9C60-10C760D6783E} = {03967580-BBF1-4D94-8475-D2DDF17E7FAB}
+		{3D1324BE-8E6C-4F20-A0BB-14518EF7625C} = {03967580-BBF1-4D94-8475-D2DDF17E7FAB}
+		{FFEFFC15-05BA-4A89-9F08-5D2280E773BC} = {774FF5CF-4E15-4D1A-B2F7-7A1F9830CF99}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {01FA7E3B-BC25-498F-9534-63972C49B557}
+	EndGlobalSection
+EndGlobal
