@@ -18,12 +18,12 @@ namespace SocialPointTest.Ranking.Infrastructure.Repositories
         {
             RankingList = new List<UserScore> {
                 new UserScore(new User{ Name = "Player1", Id=1}, 250),
-                new UserScore(new User{ Name = "Player2", Id=1}, 120),
-                new UserScore(new User{ Name = "Player3", Id=1}, 360),
-                new UserScore(new User{ Name = "Player4", Id=1}, 210),
-                new UserScore(new User{ Name = "Player5", Id=1}, 564),
-                new UserScore(new User{ Name = "Player6", Id=1}, 99),
-                new UserScore(new User{ Name = "Player7", Id=1}, 670)
+                new UserScore(new User{ Name = "Player2", Id=2}, 120),
+                new UserScore(new User{ Name = "Player3", Id=3}, 360),
+                new UserScore(new User{ Name = "Player4", Id=4}, 210),
+                new UserScore(new User{ Name = "Player5", Id=5}, 564),
+                new UserScore(new User{ Name = "Player6", Id=6}, 99),
+                new UserScore(new User{ Name = "Player7", Id=7}, 670)
             };
         }
 
@@ -32,9 +32,21 @@ namespace SocialPointTest.Ranking.Infrastructure.Repositories
             return await Task.FromResult(RankingList.FirstOrDefault(x => x.User.Id == userId));
         }
 
-        public async Task<List<UserScore>> GetRankingAsync()
+        public async Task<List<UserScore>> GetRankingAsync(int top)
         {
-            return await Task.FromResult(RankingList);
+            return await Task.FromResult(RankingList.OrderByDescending(x => x.Score).Take(top).ToList());
+        }
+
+        public void UpdateAbsoluteScore(int userId, int newScore)
+        {
+            var userScore = RankingList.Single(x => x.User.Id == userId);
+            userScore.Score = newScore;
+        }
+
+        public void UpdateRelativeScore(int userId, int score)
+        {
+            var userScore = RankingList.Single(x => x.User.Id == userId);
+            userScore.Score += score;
         }
     }
 }

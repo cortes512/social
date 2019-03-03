@@ -43,6 +43,7 @@
   <ItemGroup>
     <Compile Include="Entities\UserScore.cs" />
     <Compile Include="Entities\User.cs" />
+    <Compile Include="Exceptions\NotFoundException.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositories\IUserScore.cs" />
   </ItemGroup>

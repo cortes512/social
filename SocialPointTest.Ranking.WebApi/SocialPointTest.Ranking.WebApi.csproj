@@ -165,6 +165,16 @@
     <Content Include="Scripts\jquery-3.3.1.slim.min.map" />
     <Content Include="Scripts\jquery-3.3.1.min.map" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SocialPointTest.Ranking.Application\SocialPointTest.Ranking.Application.csproj">
+      <Project>{74851DF1-910D-4B40-8D60-E5CA4F79F789}</Project>
+      <Name>SocialPointTest.Ranking.Application</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SocialPointTest.Ranking.Infrastructure\SocialPointTest.Ranking.Infrastructure.csproj">
+      <Project>{2001a8e2-c256-438b-9c60-10c760d6783e}</Project>
+      <Name>SocialPointTest.Ranking.Infrastructure</Name>
+    </ProjectReference>
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

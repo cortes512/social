@@ -1,6 +1,7 @@
 ﻿using System;
 using Autofac.Extras.Moq;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using NUnit.Framework;
 
 namespace SocialPointTest.Ranking.Application.TDD
 {
@@ -10,8 +11,11 @@ namespace SocialPointTest.Ranking.Application.TDD
 
         protected AutoMock moqer;
 
+        [SetUp]
         public void Init()
         {
+            this.moqer = AutoMock.GetLoose();
+
             this.service = this.CreateService();
         }
 

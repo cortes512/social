@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SocialPointTest.Ranking.Application.Contracts;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net;
@@ -10,11 +11,19 @@ namespace SocialPointTest.Ranking.WebApi.Controllers
     [RoutePrefix("Ranking")]
     public class RankingController : ApiController
     {
-        [Route("Hello")]
-        [HttpGet]
-        public string Hello()
+        private readonly IRankingApplicationService RankingApplicationService;
+
+        public RankingController(IRankingApplicationService rankingApplicationService)
         {
-            return "Hello";
+            this.RankingApplicationService = rankingApplicationService;
+        }
+
+        [Route("get-ranking/{top:int}")]
+        [HttpGet]
+        public string GetRanking(int top)
+        {
+
+            return "Hello"+top.ToString();
         }
     }
 }
