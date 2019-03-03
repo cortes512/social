@@ -134,9 +134,13 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\RankingController.cs" />
+    <Compile Include="Extensions\Mappings\UpdateAbsoluteScoreDtoExtension.cs" />
+    <Compile Include="Extensions\Mappings\UpdateRelativeScoreDtoExtension.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\UpdateAbsoluteScoreDto.cs" />
+    <Compile Include="Models\UpdateRelativeScoreDto.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -169,6 +173,14 @@
     <ProjectReference Include="..\SocialPointTest.Ranking.Application\SocialPointTest.Ranking.Application.csproj">
       <Project>{74851DF1-910D-4B40-8D60-E5CA4F79F789}</Project>
       <Name>SocialPointTest.Ranking.Application</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SocialPointTest.Ranking.Domain\SocialPointTest.Ranking.Domain.csproj">
+      <Project>{b3470ea3-ad47-499b-aa00-78f975187618}</Project>
+      <Name>SocialPointTest.Ranking.Domain</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SocialPointTest.Ranking.Infrastructure.IoC\SocialPointTest.Ranking.Infrastructure.IoC.csproj">
+      <Project>{687020d2-0530-4cf6-b514-81ac070f7d9d}</Project>
+      <Name>SocialPointTest.Ranking.Infrastructure.IoC</Name>
     </ProjectReference>
     <ProjectReference Include="..\SocialPointTest.Ranking.Infrastructure\SocialPointTest.Ranking.Infrastructure.csproj">
       <Project>{2001a8e2-c256-438b-9c60-10c760d6783e}</Project>

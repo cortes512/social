@@ -10,8 +10,9 @@ namespace SocialPointTest.Ranking.Domain.Repositories
 {
     public interface IUserScore
     {
-        Task<UserScore> GetUserScoreByUserIdAsync(int userId);
+        List<UserScore> GetRanking(int top);
         Task<List<UserScore>> GetRankingAsync(int top);
+        Task<UserScore> GetUserScoreByUserIdAsync(int userId);
         void UpdateAbsoluteScore(int userId, int newScore);
         void UpdateRelativeScore(int userId, int score);
     }

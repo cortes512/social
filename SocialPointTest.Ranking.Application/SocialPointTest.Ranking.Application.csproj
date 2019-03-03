@@ -45,9 +45,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\RankingApplicationService.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Dto\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <ProjectReference Include="..\SocialPointTest.Ranking.Domain\SocialPointTest.Ranking.Domain.csproj">
       <Project>{b3470ea3-ad47-499b-aa00-78f975187618}</Project>
