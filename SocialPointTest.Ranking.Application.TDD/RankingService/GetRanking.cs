@@ -1,26 +1,46 @@
 ﻿using System;
 using System.Threading.Tasks;
-using FluentAssertions;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using SocialPointTest.Ranking.Domain.Entities;
+using Moq;
+using NUnit.Framework;
+
+using SocialPointTest.Ranking.Application.Services;
 using SocialPointTest.Ranking.Domain.Repositories;
 
 namespace SocialPointTest.Ranking.Application.TDD.RankingService
 {
-    [TestClass]
-    public class GetRanking :TestBase<Services.RankingApplicationService>
+    [TestFixture]
+    public class GetRanking : TestBase<RankingApplicationService>
     {
-        [TestMethod]
-        public async Task ShouldGetRanking()
+        [Test]
+        public void ShouldGetRankingTop5()
         {
             //arrange
-            this.Init();
+            this.Mock<IUserScore>()
+            .Setup(x => x.GetRanking(5));
 
             //act
-            var result = await this.service.GetRankingAsync(5);
+            this.service.GetRanking(5);
 
             //assert
-            result.Should().HaveCount(5);
+            this.Mock<IUserScore>()
+            .Verify(x => x.GetRanking(5), Times.Once);
         }
+
+        [Test]
+        public void ShouldGetAllRanking()
+        {
+            //arrange
+            this.Mock<IUserScore>()
+            .Setup(x => x.GetAllRanking());
+
+            //act
+            this.service.GetRanking(0);
+
+            //assert
+            this.Mock<IUserScore>()
+            .Verify(x => x.GetAllRanking(), Times.Once);
+        }
+
     }
 }

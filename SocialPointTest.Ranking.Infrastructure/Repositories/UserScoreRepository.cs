@@ -42,21 +42,23 @@ namespace SocialPointTest.Ranking.Infrastructure.Repositories
             return await Task.FromResult(RankingList.FirstOrDefault(x => x.User.Id == userId));
         }
 
+        public List<UserScore> GetAllRanking()
+        {
+            return RankingList.OrderByDescending(x => x.Score).ToList();
+        }
+
+        public async Task<List<UserScore>> GetAllRankingAsync()
+        {
+            return await Task.FromResult(RankingList.OrderByDescending(x => x.Score).ToList());
+        }
+
         public List<UserScore> GetRanking(int top)
         {
-            if (top == 0)
-            {
-                return RankingList.OrderByDescending(x => x.Score).ToList();
-            }
             return RankingList.OrderByDescending(x => x.Score).Take(top).ToList();
         }
 
         public async Task<List<UserScore>> GetRankingAsync(int top)
         {
-            if (top == 0)
-            {
-                return await Task.FromResult(RankingList.OrderByDescending(x => x.Score).ToList());
-            }
             return await Task.FromResult(RankingList.OrderByDescending(x => x.Score).Take(top).ToList());
         }
 

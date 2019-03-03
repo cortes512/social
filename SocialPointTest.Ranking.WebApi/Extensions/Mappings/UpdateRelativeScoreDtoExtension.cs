@@ -1,9 +1,7 @@
-﻿using SocialPointTest.Ranking.Domain.Entities;
+﻿using System;
+
+using SocialPointTest.Ranking.Domain.Entities;
 using SocialPointTest.Ranking.WebApi.Models;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 
 namespace SocialPointTest.Ranking.WebApi.Extensions.Mappings
 {

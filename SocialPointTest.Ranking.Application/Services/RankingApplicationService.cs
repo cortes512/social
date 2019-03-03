@@ -1,10 +1,10 @@
-﻿using SocialPointTest.Ranking.Domain.Entities;
-using SocialPointTest.Ranking.Domain.Repositories;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
+
+using SocialPointTest.Ranking.Domain.Entities;
+using SocialPointTest.Ranking.Domain.Repositories;
 
 namespace SocialPointTest.Ranking.Application.Services
 {
@@ -19,11 +19,19 @@ namespace SocialPointTest.Ranking.Application.Services
 
         public List<UserScore> GetRanking(int top)
         {
-            return ScoreRepository.GetRanking(0);
+            if (top == 0)
+            {
+                return ScoreRepository.GetAllRanking();
+            }
+            return ScoreRepository.GetRanking(top);
         }
 
         public async Task<List<UserScore>> GetRankingAsync(int top)
         {
+            if (top == 0)
+            {
+                return await ScoreRepository.GetAllRankingAsync();
+            }
             return await ScoreRepository.GetRankingAsync(top);
         }
 

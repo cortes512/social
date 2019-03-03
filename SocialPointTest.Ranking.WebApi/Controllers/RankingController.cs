@@ -1,14 +1,10 @@
-﻿using SocialPointTest.Ranking.Application.Contracts;
-using SocialPointTest.Ranking.Infrastructure.IoC.Factories;
+﻿using System.Threading.Tasks;
+using System.Web.Http;
+
+using SocialPointTest.Ranking.Application.Contracts;
+using SocialPointTest.Ranking.Application.IoC.Factories;
 using SocialPointTest.Ranking.WebApi.Extensions.Mappings;
 using SocialPointTest.Ranking.WebApi.Models;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Net;
-using System.Net.Http;
-using System.Threading.Tasks;
-using System.Web.Http;
 
 namespace SocialPointTest.Ranking.WebApi.Controllers
 {

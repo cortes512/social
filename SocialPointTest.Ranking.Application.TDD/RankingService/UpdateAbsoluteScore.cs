@@ -1,18 +1,18 @@
 ﻿using System;
 using System.Threading.Tasks;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
 using FluentAssertions;
+using Moq;
+using NUnit.Framework;
 
 using SocialPointTest.Ranking.Domain.Entities;
 using SocialPointTest.Ranking.Domain.Repositories;
 
-
 namespace SocialPointTest.Ranking.Application.TDD.RankingService
 {
-    [TestClass]
+    [TestFixture]
     public class UpdateAbsoluteScore : TestBase<Services.RankingApplicationService>
     {
-        [TestMethod]
+        [Test]
         public async Task ShouldUpdateAbsoluteScore()
         {
             //arrange
@@ -27,10 +27,12 @@ namespace SocialPointTest.Ranking.Application.TDD.RankingService
             await this.service.UpdateAbsoluteScoreAsync(userScore.User.Id, userScore.Score);
 
             //assert
-            userScore.Score.Should().Be(userScore.Score);
+            this.Mock<IUserScore>()
+            .Verify(x => x.UpdateAbsoluteScore(userScore.User.Id, 200), Times.Once);
+
         }
 
-        [TestMethod]
+        [Test]
         public void ShouldThrowNotFoundException()
         {
             //arrange

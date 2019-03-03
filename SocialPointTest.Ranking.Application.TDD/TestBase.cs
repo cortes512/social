@@ -1,6 +1,8 @@
 ﻿using System;
+using System.Linq.Expressions;
 using Autofac.Extras.Moq;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using Moq;
 using NUnit.Framework;
 
 namespace SocialPointTest.Ranking.Application.TDD
@@ -24,10 +26,21 @@ namespace SocialPointTest.Ranking.Application.TDD
             return this.moqer.Create<T>();
         }
 
-        protected Moq.Mock<TDependency> Mock<TDependency>() where TDependency : class
+        protected Mock<TDependency> Mock<TDependency>() where TDependency : class
         {
             return this.moqer.Mock<TDependency>();
         }
+
+        protected void Verify<TDependency>(Expression<Action<TDependency>> expression) where TDependency : class
+        {
+            this.Mock<TDependency>().Verify(expression);
+        }
+
+        protected void VerifyOnce<TDependency>(Expression<Action<TDependency>> expression) where TDependency : class
+        {
+            this.Mock<TDependency>().Verify(expression, Times.Once());
+        }
+
 
     }
 

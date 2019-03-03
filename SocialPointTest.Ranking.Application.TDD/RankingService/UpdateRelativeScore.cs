@@ -1,22 +1,24 @@
 ﻿using System;
 using System.Threading.Tasks;
 using FluentAssertions;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+using Moq;
+using NUnit.Framework;
 
+using SocialPointTest.Ranking.Application.Contracts;
+using SocialPointTest.Ranking.Application.IoC.Factories;
 using SocialPointTest.Ranking.Application.Services;
 using SocialPointTest.Ranking.Domain.Entities;
 using SocialPointTest.Ranking.Domain.Repositories;
 
 namespace SocialPointTest.Ranking.Application.TDD.RankingService
 {
-    [TestClass]
+    [TestFixture]
     public class UpdateRelativeScore : TestBase<RankingApplicationService>
     {
-        [TestMethod]
+        [Test]
         public async Task ShouldUpdateRelativeScore()
         {
             //arrange
-            this.Init();
             var userScore = new UserScore(new User { Id = 1, Name = "PlayerTest" }, 200);
 
             this.Mock<IUserScore>()
@@ -27,14 +29,14 @@ namespace SocialPointTest.Ranking.Application.TDD.RankingService
             await this.service.UpdateRelativeScoreAsync(userScore.User.Id, 100);
 
             //assert
-            userScore.Score.Should().Be(300);
+            this.Mock<IUserScore>()
+            .Verify(x => x.UpdateRelativeScore(userScore.User.Id, 100), Times.Once);
         }
 
-        [TestMethod]
+        [Test]
         public void ShouldThrowNotFoundException()
         {
             //arrange
-            this.Init();
             var userScore = new UserScore(new User { Id = 1, Name = "PlayerTest" }, 200);
 
             this.Mock<IUserScore>()
